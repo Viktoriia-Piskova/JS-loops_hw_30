@@ -28,9 +28,25 @@
             <input type="number" name="userCheckAmount" id="userCheckAmount" min="1" placeholder="$">
         </div>
 
-        <div class="answer">
-            <p>You have  <span id="discountResult">__</span>% discount! </p>
-            <p>Total check amount is <span id="totalCheckAmount">__</span>$</p>
+        <div class="answer" >
+
+            <table id="tableWithDiscountAnswer">
+
+                <td colspan="2">Waiting for check amount...</td>
+                <!-- <tr id="discountAnswer">
+                    <td>Your discount:</td>
+                    <td> <span id="discountResult">...</span>%</td>
+                </tr>
+
+                <tr>
+                    <td><b>Total</b></td>
+                    <td id="totalCheckAmount">...</td>
+                </tr>
+                <tr>
+                    <td colspan="2">You can add <span id="sumToGetHigherDiscount"></span> $ to get <span id="nextDiscountLevel">% discount!</span></td>
+                </tr> -->
+            </table>
+            
 
         </div>
     </section>
