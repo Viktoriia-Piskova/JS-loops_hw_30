@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +10,13 @@
     <script defer src="script.js"></script>
     <title>Loops | Java Script</title>
 </head>
+
 <body>
     <section id="palindrome">
         <div class="question">
             <p>Enter number or word and press Enter</p>
-            <input type="text" name="palindromUserInput" id="palindromUserInput" min="10000" max="99999"  placeholder="Ex: 12345">
+            <input type="text" name="palindromUserInput" id="palindromUserInput" min="10000" max="99999"
+                placeholder="Ex: 12345">
         </div>
 
         <div class="answer">
@@ -28,7 +31,7 @@
             <input type="number" name="userCheckAmount" id="userCheckAmount" min="1" placeholder="$">
         </div>
 
-        <div class="answer" >
+        <div class="answer">
 
             <table id="tableWithDiscountAnswer">
 
@@ -46,10 +49,41 @@
                     <td colspan="2">You can add <span id="sumToGetHigherDiscount"></span> $ to get <span id="nextDiscountLevel">% discount!</span></td>
                 </tr> -->
             </table>
-            
+        </div>
+
+
+    </section>
+
+    <section id="statistics">
+
+        <div class="question">
+            <p>Type any number and press Enter. You can add up to 100 numbers. Then press "Statistics" button</p>
+
+            <input type="number" name="inputNumberForStat" id="inputNumberForStat" placeholder="Number">
+            <output id="outputNumbersForStat"></output>
+            <button id="getNumberStatistics">Statistics</button>
 
         </div>
+
+        <div class="answer">
+            <div id="numbersBar">
+                <p>Positive numbers</p>
+                <div class="container">
+                    <div class="persentage" id="positiveBar"> + </div>
+                </div>
+                <p>Negative numbers</p>
+                <div class="container">
+                    <div class="persentage" id="negativeBar"> - </div>
+                </div>
+                <p>Zero numbers</p>
+                <div class="container">
+                    <div class="persentage" id="zeroBar">0</div>
+                </div>
+            </div>
+        </div>
+
     </section>
-    
+
 </body>
+
 </html>

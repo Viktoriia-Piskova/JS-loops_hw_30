@@ -79,34 +79,86 @@ function calculateDiscount() {
 
     //step 2 - display info for user
     document.getElementById('tableWithDiscountAnswer').innerHTML = `
-        <tr id="discountAnswer">
+        <tr>
             <td>Your discount:</td>
-            <td> <span id="discountResult">${discountPersentage}</span>%</td>
+            <td>${discountPersentage} %</td>
         </tr>
 
         <tr>
             <td><b>Total</b></td>
-            <td id="totalCheckAmount">${totalCheckAmount} $</td>
+            <td>${totalCheckAmount} $</td>
         </tr>`;
 
-    // if (discountPersentage < 7) {
-    //     document.getElementById('tableWithDiscountAnswer').innerHTML += ` <tr>
-    //         <td colspan="2">You can add <span id="sumToGetHigherDiscount">${sumToGetHigherDiscount}</span> $ to get <span id="nextDiscountLevel"> ${nextDiscountLevel}</span>% discount!</td>
-    //     </tr>`
-    //     }
-    // else{
-    //     document.getElementById('tableWithDiscountAnswer').innerHTML += ` <tr>
-    //         <td colspan="2">Congratulations! You have maximum possible discount!</td>
-    //     </tr>`} 
-
-    (discountPersentage < 7) ? document.getElementById('tableWithDiscountAnswer').innerHTML += ` <tr>
-    <td colspan="2">You can add <span id="sumToGetHigherDiscount">${sumToGetHigherDiscount}</span> $ to get <span id="nextDiscountLevel"> ${nextDiscountLevel}</span>% discount!</td>
-    </tr>` 
-    : document.getElementById('tableWithDiscountAnswer').innerHTML += ` <tr><td colspan="2">Congratulations! You have maximum possible discount!</td></tr>`;
+       (discountPersentage < 7) ? document.getElementById('tableWithDiscountAnswer').innerHTML += ` <tr>
+    <td colspan="2">You can add ${sumToGetHigherDiscount}$ to get ${nextDiscountLevel}% discount!</td>
+    </tr>`
+        : document.getElementById('tableWithDiscountAnswer').innerHTML += ` <tr><td colspan="2">Congratulations! You have maximum possible discount!</td></tr>`;
 }
 
 
 //number statistics
+
+document.getElementById('inputNumberForStat').addEventListener('change', addNumberToList);
+document.getElementById('inputNumberForStat').addEventListener('change', showNumbersInOutput);
+document.getElementById('getNumberStatistics').addEventListener('click', buildNumbersStatistics);
+
+
+
+function showNumbersInOutput() {
+
+    let numberForTyping = document.getElementById('inputNumberForStat').value;
+    document.getElementById('outputNumbersForStat').innerHTML += `${numberForTyping}, `;
+    document.getElementById('inputNumberForStat').value = '';
+}
+
+
+let allNumbersList = [];
+
+function addNumberToList() {
+
+    allNumbersList.push(parseFloat(document.getElementById('inputNumberForStat').value));
+    return allNumbersList;
+
+}
+
+
+
+function buildNumbersStatistics() {
+
+    let positiveBar = 0;
+    let negativeBar = 0;
+    let zeroBar = 0;
+
+    for (let j = 0; j < allNumbersList.length; j++) {
+        if (allNumbersList[j] === 0) {
+            zeroBar++
+        }
+        else if (allNumbersList[j] > 0) {
+            positiveBar++
+        }
+        else if (allNumbersList[j] < 0) {
+            negativeBar++
+        }
+
+    
+        
+    }
+    
+    let positivePersentage = Math.floor(positiveBar * 100 / allNumbersList.length);
+    let negativePersentage = Math.floor(negativeBar * 100 / allNumbersList.length);
+    let zeroPersentage = Math.floor(zeroBar * 100 / allNumbersList.length);
+
+    document.getElementById('positiveBar').style.width = `${positivePersentage}%`;
+    document.getElementById('positiveBar').innerHTML = `${positiveBar} (${positivePersentage}%)`;
+
+    document.getElementById('negativeBar').style.width = `${negativePersentage}%`;
+    document.getElementById('negativeBar').innerHTML = `${negativeBar} (${negativePersentage}%)`;
+
+    document.getElementById('zeroBar').style.width = `${zeroPersentage}%`;
+    document.getElementById('zeroBar').innerHTML = `${zeroBar} (${zeroPersentage}%)`;
+}
+
+
 
 
 

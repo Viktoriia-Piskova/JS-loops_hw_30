@@ -1,0 +1,63 @@
+
+
+section{
+    margin: 50px auto;
+    border: 1px solid green;
+    background-color: beige;
+}
+
+input{
+    display: block;
+    margin: 20px auto;
+}
+
+output{
+    display: block;
+    border: 1px grey solid;
+    background-color: white;
+    margin: 10px auto;
+    width: 80%;
+    min-height: 36px;
+    
+}
+
+button{
+    display: block;
+    margin: auto;
+
+}
+.container{
+    width: 100%;
+    height: fit-content;
+    
+}
+
+.persentage{
+    margin: 10px;
+    padding-left: 20px;
+    color: darkslategrey;
+    overflow: visible;
+    white-space: nowrap;
+    
+}
+
+#numbersBar{
+    background-color: white;
+    width: 90%;
+    padding: 20px;
+}
+
+#zeroBar{
+    width: 80%; 
+    background-color: #2196F3;
+}
+
+#positiveBar{
+    width: 90%; 
+    background-color: #04AA6D;
+}
+
+#negativeBar{
+    width: 65%; 
+    background-color: #f44336;
+}
