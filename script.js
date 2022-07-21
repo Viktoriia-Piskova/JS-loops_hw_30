@@ -39,6 +39,7 @@ function checkAndType() {
 
 document.getElementById('userCheckAmount').addEventListener("change", calculateDiscount);
 
+
 function calculateDiscount() {
 
     let discountPersentage = 0;
@@ -101,7 +102,15 @@ function calculateDiscount() {
 document.getElementById('inputNumberForStat').addEventListener('change', addNumberToList);
 document.getElementById('inputNumberForStat').addEventListener('change', showNumbersInOutput);
 document.getElementById('getNumberStatistics').addEventListener('click', buildNumbersStatistics);
+document.getElementById('clearNumberStatistics').addEventListener("click", clearNumberStatistics);
 
+let allNumbersList = [];
+
+function clearNumberStatistics(){
+    allNumbersList = [];
+    document.getElementById('outputNumbersForStat').innerHTML ='';
+
+}
 
 
 function showNumbersInOutput() {
@@ -112,7 +121,7 @@ function showNumbersInOutput() {
 }
 
 
-let allNumbersList = [];
+
 
 function addNumberToList() {
 

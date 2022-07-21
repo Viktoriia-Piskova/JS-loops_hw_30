@@ -4,6 +4,7 @@ section{
     margin: 50px auto;
     border: 1px solid green;
     background-color: beige;
+    padding: 20px;
 }
 
 input{
@@ -21,11 +22,34 @@ output{
     
 }
 
-button{
-    display: block;
+.container-for-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
     margin: auto;
+    width: 80%;
+}
+
+button{
+    display: inline-block;
+    margin: auto;
+    height: 36px;
+    width: 120px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    border: none;
 
 }
+
+#getNumberStatistics{
+    background-color: green;
+}
+
+#clearNumberStatistics{
+    background-color: red;
+}
+
 .container{
     width: 100%;
     height: fit-content;
@@ -45,6 +69,7 @@ button{
     background-color: white;
     width: 90%;
     padding: 20px;
+    margin: 20px;
 }
 
 #zeroBar{
