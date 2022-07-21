@@ -1,9 +1,33 @@
+/* font-family: 'Roboto Mono', monospace; */
 
+*{
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+}
+
+body{
+    background-color: lightblue;
+}
+
+h1{
+    font-size: x-large;
+}
+
+header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#toggleTheme{
+    font-size: smaller;
+    background-color: black;
+}
 
 section{
     margin: 50px auto;
-    border: 1px solid green;
-    background-color: beige;
+    border: 2px solid green;
+    background-color: white;
     padding: 20px;
 }
 
@@ -14,7 +38,7 @@ input{
 
 output{
     display: block;
-    border: 1px grey solid;
+    border: 2px grey solid;
     background-color: white;
     margin: 10px auto;
     width: 80%;
@@ -70,6 +94,7 @@ button{
     width: 90%;
     padding: 20px;
     margin: 20px;
+    border: solid black 2px;
 }
 
 #zeroBar{

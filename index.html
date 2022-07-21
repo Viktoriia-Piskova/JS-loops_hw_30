@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
@@ -12,6 +15,12 @@
 </head>
 
 <body>
+
+    <header>
+        <h1>Let's play with numbers!</h1>
+        <button id="toggleTheme">Dark theme</button>
+    </header>
+
     <section id="palindrome">
         <div class="question">
             <p>Enter number or word and press Enter</p>
@@ -61,7 +70,7 @@
 
             <input type="number" name="inputNumberForStat" id="inputNumberForStat" placeholder="Number">
             <output id="outputNumbersForStat"></output>
-            
+
             <div class="container-for-buttons">
                 <button id="getNumberStatistics">Statistics</button>
                 <button id="clearNumberStatistics">Clear</button>
