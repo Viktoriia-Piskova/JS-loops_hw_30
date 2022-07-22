@@ -5,38 +5,66 @@
     text-align: center;
 }
 
-body{
-    background-color: lightblue;
+.lightBody{
+    background-color: #d8f3fc;
+
 }
 
 h1{
-    font-size: x-large;
+    font-size: 30px;
+    text-align: left;
 }
 
 header{
-    padding: 20px;
+    margin: auto;
+    padding-top: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-content: center;
+    width: 80%;
 }
 
-#toggleTheme{
+.toggleTheme{
     font-size: smaller;
     background-color: black;
 }
 
-section{
+.sectionLight{
+    width: 80%;
     margin: 50px auto;
-    border: 2px solid green;
+    border: 2px solid darkslategray;
     background-color: white;
     padding: 20px;
 }
 
-input{
+.inputLight{
     display: block;
     margin: 20px auto;
+    border: 2px grey solid;
+    background-color: #bee6c2;
+    
 }
 
-output{
+table{
+    width: 100%;
+}
+
+td{
+    text-align: left;
+    border: 1px gray solid;
+    padding: 5px;
+}
+
+.noBorderTd{
+    border: none;
+}
+
+.inputLight:focus{
+    background-color: white;
+    border: solid 3px  green;
+}
+
+.outputLight{
     display: block;
     border: 2px grey solid;
     background-color: white;
@@ -66,12 +94,26 @@ button{
 
 }
 
+button:hover{
+    border: solid 3px yellow;
+}
+
 #getNumberStatistics{
     background-color: green;
 }
 
 #clearNumberStatistics{
     background-color: red;
+}
+
+.guessNumber{
+    background-color: #091e9b;
+}
+
+.guessNumberYes{
+    background-color: green;
+    width: 175px;
+    margin: 20px auto;
 }
 
 .container{
@@ -82,14 +124,13 @@ button{
 
 .persentage{
     margin: 10px;
-    padding-left: 20px;
     color: darkslategrey;
     overflow: visible;
     white-space: nowrap;
     
 }
 
-#numbersBar{
+.numbersBarField{
     background-color: white;
     width: 90%;
     padding: 20px;
@@ -110,4 +151,45 @@ button{
 #negativeBar{
     width: 65%; 
     background-color: #f44336;
+}
+
+
+.invisible{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+
+/* dark theme classes */
+
+.darkBody{
+    background-color: #14273e;
+    color: white;
+}
+
+.darkSection{
+    background-color: black;
+    border-color: #091e9b;
+
+}
+
+.darkNumbersBarField{
+    background-color: #534c4c;
+}
+
+.darkInput{
+    background-color: #5af9e8;
+}
+
+.darkOutput{
+    color: black;
+    background-color: #5af9e8;
+}
+
+.darkToggleTheme{
+    color: black;
+    background-color: white;
 }

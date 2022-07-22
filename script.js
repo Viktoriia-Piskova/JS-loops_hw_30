@@ -90,7 +90,7 @@ function calculateDiscount() {
             <td>${totalCheckAmount} $</td>
         </tr>`;
 
-       (discountPersentage < 7) ? document.getElementById('tableWithDiscountAnswer').innerHTML += ` <tr>
+    (discountPersentage < 7) ? document.getElementById('tableWithDiscountAnswer').innerHTML += ` <tr>
     <td colspan="2">You can add ${sumToGetHigherDiscount}$ to get ${nextDiscountLevel}% discount!</td>
     </tr>`
         : document.getElementById('tableWithDiscountAnswer').innerHTML += ` <tr><td colspan="2">Congratulations! You have maximum possible discount!</td></tr>`;
@@ -106,9 +106,9 @@ document.getElementById('clearNumberStatistics').addEventListener("click", clear
 
 let allNumbersList = [];
 
-function clearNumberStatistics(){
+function clearNumberStatistics() {
     allNumbersList = [];
-    document.getElementById('outputNumbersForStat').innerHTML ='';
+    document.getElementById('outputNumbersForStat').innerHTML = '';
 
 }
 
@@ -149,10 +149,10 @@ function buildNumbersStatistics() {
             negativeBar++
         }
 
-    
-        
+
+
     }
-    
+
     let positivePersentage = Math.floor(positiveBar * 100 / allNumbersList.length);
     let negativePersentage = Math.floor(negativeBar * 100 / allNumbersList.length);
     let zeroPersentage = Math.floor(zeroBar * 100 / allNumbersList.length);
@@ -169,5 +169,121 @@ function buildNumbersStatistics() {
 
 
 
+//guess number game
 
+let allGuessNumbers = [];
+
+
+
+
+document.getElementById('guessNumberStart').addEventListener("click", showGuessNumberButtons);
+
+function showGuessNumberButtons() {
+    document.querySelector('.invisible').classList.toggle("visible");
+    document.getElementById('potentialNumber').innerHTML = `50`;
+    
+
+    let toggleRestartButtonText = document.getElementById('guessNumberStart');
+
+    if(toggleRestartButtonText.innerHTML == "Start game!"){
+        toggleRestartButtonText.innerHTML = "Right Number!"
+    }
+   
+    else{
+        document.getElementById('guessNumberStart').innerHTML = "Start game!";
+    }
+}
+
+document.getElementById('guessNumberStart').addEventListener('click', fillAllGuessNumbers)
+
+function fillAllGuessNumbers() {
+    let numberGuessIndex = 0;
+    while (numberGuessIndex < 100) {
+        allGuessNumbers.push(numberGuessIndex);
+        numberGuessIndex++
+    }
+}
+
+
+document.getElementById('biggerGuessNumber').addEventListener('click', moveToBiggerPartOfNumbers);
+document.getElementById('smallerGuessNumber').addEventListener('click', moveToSmallerPartOfNumbers);
+
+function moveToSmallerPartOfNumbers() {
+    allGuessNumbers = allGuessNumbers.splice(0, Math.floor(allGuessNumbers.length / 2));
+    let middleIndex = Math.floor(allGuessNumbers.length / 2);
+    let middleGuessNumber = allGuessNumbers[middleIndex];
+    if(isNaN(middleGuessNumber)){
+        document.getElementById('potentialNumber').innerHTML = `a joke`; 
+    }
+    else{
+        document.getElementById('potentialNumber').innerHTML = `${middleGuessNumber}`;
+    }
+}
+
+function moveToBiggerPartOfNumbers() {
+    allGuessNumbers = allGuessNumbers.splice(Math.floor(allGuessNumbers.length / 2 - 1), (allGuessNumbers.length - 1));
+    let middleIndex = Math.floor(allGuessNumbers.length / 2);
+    let middleGuessNumber = allGuessNumbers[middleIndex];
+    
+
+    
+    if(isNaN(middleGuessNumber)){
+        document.getElementById('potentialNumber').innerHTML = `a joke`; 
+    }
+    else{
+        document.getElementById('potentialNumber').innerHTML = `${middleGuessNumber}`;
+    }
+
+
+}
+
+// document.getElementById('guessNumberYes').addEventListener("click", restartGame);
+
+// function restartGame(){
+//     document.querySelector('.visible').classList.toggle("invisible");
+//     document.getElementById('guessNumberStart').style.display = "display";
+// }
+
+//document.getElementById('potentialNumber').innerHTML = `${middleGuessNumber}`;
+
+
+
+
+
+
+//script fot toggling light and dark modes
+
+document.getElementById('toggleTheme').addEventListener("click", toggleDarkTheme);
+
+function toggleDarkTheme() {
+
+    document.querySelector('.lightBody').classList.toggle("darkBody");
+    document.querySelector('.toggleTheme').classList.toggle("darkToggleTheme");
+    document.querySelector('.numbersBarField').classList.toggle("darkNumbersBarField");
+
+    const allOutputs = document.querySelectorAll('.outputLight');
+    for (const everyOutput of allOutputs) {
+        everyOutput.classList.toggle('darkOutput');
+    }
+
+    const allSections = document.querySelectorAll('.sectionLight');
+    for (const everySection of allSections) {
+        everySection.classList.toggle("darkSection");
+    }
+
+    const allInputs = document.querySelectorAll('.inputLight');
+    for (const everyInput of allInputs) {
+        everyInput.classList.toggle("darkInput")
+    }
+
+
+    let themeButtonText = document.getElementById('toggleTheme');
+    if (themeButtonText.innerHTML === "Dark theme") {
+        themeButtonText.innerHTML = "Light Theme";
+    }
+    else {
+        themeButtonText.innerHTML = "Dark theme";
+    }
+
+}
 
