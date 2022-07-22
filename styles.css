@@ -3,6 +3,7 @@
 *{
     font-family: 'Roboto Mono', monospace;
     text-align: center;
+    transition: all 300ms;
 }
 
 .lightBody{
@@ -141,16 +142,19 @@ button:hover{
 #zeroBar{
     width: 80%; 
     background-color: #2196F3;
+    transition: all 700ms;
 }
 
 #positiveBar{
     width: 90%; 
     background-color: #04AA6D;
+    transition: all 700ms;
 }
 
 #negativeBar{
     width: 65%; 
     background-color: #f44336;
+    transition: all 700ms;
 }
 
 
