@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <title>Loops | Java Script</title>
+</head>
+
+<body class="lightBody">
+
+    <header>
+        <h1>Let's play with numbers!</h1>
+        <button class="toggleTheme" id="toggleTheme">Dark theme</button>
+    </header>
+
+    <section class="sectionLight" id="palindrome">
+        <div class="question">
+            <p>Enter number or word and press Enter</p>
+            <input class="inputLight" type="text" name="palindromUserInput" id="palindromUserInput" min="10000" max="99999"
+                placeholder="Ex: 12345">
+        </div>
+
+        <div class="answer">
+            <p>This is <span id="palindromResult">...</span></p>
+        </div>
+    </section>
+
+
+    <section class="sectionLight" id="discount">
+        <div class="question">
+            <p>Enter check amount</p>
+            <input class="inputLight" type="number" name="userCheckAmount" id="userCheckAmount" min="1" placeholder="$">
+        </div>
+
+        <div class="answer">
+            
+            <table id="tableWithDiscountAnswer">
+                <td colspan="2" class="noBorderTd"> Waiting for check amount...</td>
+
+                
+                <!-- <tr id="discountAnswer">
+                    <td>Your discount:</td>
+                    <td> <span id="discountResult">...</span>%</td>
+                </tr>
+
+                <tr>
+                    <td><b>Total</b></td>
+                    <td id="totalCheckAmount">...</td>
+                </tr>
+                <tr>
+                    <td colspan="2">You can add <span id="sumToGetHigherDiscount"></span> $ to get <span id="nextDiscountLevel">% discount!</span></td>
+                </tr> -->
+            </table>
+        </div>
+
+
+    </section>
+
+    <section class="sectionLight"  id="statistics">
+
+        <div class="question">
+            <p>Type any number and press Enter. You can add up to 100 numbers. Then press "Statistics" button</p>
+
+            <input class="inputLight" type="number" name="inputNumberForStat" id="inputNumberForStat" placeholder="Ex: -1 &#8626;">
+            <output class="outputLight" id="outputNumbersForStat"></output>
+
+            <div class="container-for-buttons">
+                <button id="getNumberStatistics">Statistics</button>
+                <button id="clearNumberStatistics">Clear</button>
+            </div>
+
+        </div>
+
+        <div class="answer">
+            <div id="numbersBar" class="numbersBarField changesDark">
+                <p>Positive numbers:</p>
+                <div class="container">
+                    <div class="persentage" id="positiveBar"> + </div>
+                </div>
+                <p>Negative numbers:</p>
+                <div class="container">
+                    <div class="persentage" id="negativeBar"> - </div>
+                </div>
+                <p>Zero numbers:</p>
+                <div class="container">
+                    <div class="persentage" id="zeroBar">0</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="sectionLight" id="guessNumber">
+
+        <div class="question"><p>Think of number from 0 to 99. Press "Smaller" or "Bigger" to help me guess it :)</p>
+            <button class="guessNumberYes" id="guessNumberStart">Start game!</button>   
+        </div>
+
+        <div class="answer invisible" id="activeAreaForGuessNumber">
+            <output class="outputLight">Is it <b><span id="potentialNumber">50 </span></b>?</output>
+            <!-- <button class="guessNumberYes" id="guessNumberYes">Right number!</button> -->
+            <div class="container-for-buttons ">
+                <button class="guessNumber" id="smallerGuessNumber" value="smaller">Smaller</button>
+                <button class="guessNumber" id="biggerGuessNumber" value="bigger">Bigger</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
